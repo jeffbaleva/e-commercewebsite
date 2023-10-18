@@ -12,7 +12,7 @@
   </head>
   <body>
     <header>
-        <nav class="nav bar navbar-expand-lg navbar-dark fixed-top bg-dark bg-primary">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark bg-primary">
             <div class="container">
                 <a class="navbar-brand" href="index.html">
                     <img src="images/FigureFactory Logo.jpg" width="30" height="30" class="d-inline-block align-top"
@@ -41,11 +41,15 @@
                         <li class="nav-item">
                             <a class="nav-link" href="order.html">Order</a>
                         </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="basicform.html">Log In</a>
+                      </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+
        <main role="main">
             <div class="container">
                  <h1 class="fw-bolder">Sasuke Uchiha</h1>
@@ -77,9 +81,9 @@
                         </p>
                         <h3>Price: <span id="price">$49.99</span></h3>
                         <div> 
-                            <a type="button" href="order.html" class="btn btn-success">
-                                Add to cart
-                            </a>
+                          <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#shoppingCart" role="button" aria-controls="shoppingCart">
+                            Add to cart
+                          </a>
 
                         </div>
                  </div> 
@@ -94,7 +98,96 @@
                   </div>
                  </div>  
             </div>
-    
-   
+            <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1"
+            id="shoppingCart" aria-labelledby="shoppingCartLabel">
+
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="shoppingCartLabel"> Your Shopping Cart</h5>
+                <button type="button" class="btw-close text-reset" data-bs-dismiss="offcanvas"
+                  aria-label="Close"></button>
+              </div>
+
+              <div class="offcanvas-body">
+                <div class="table-responsive">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th>Figure Name</th>
+                        <th>Quantity</th>
+                        <th class="text-center">Price</th>
+                        <th class="text-center">Total</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="col-sm-8 col-md-6">
+                          <div class="media">
+                              <img class="mr-3 thumbnail img-fluid" width="75"
+                              src="Images/Hawk 1.jpg" alt="Hawks!">
+                              <div class="media-body">
+                                <h5 class="mt-0 media-heading text-primary"> Hawks!</h5>
+                                <span>Status: </span><span class="text-success"><strong>In 
+                                  Stock</strong></span>
+                              </div>
+                          </div>
+                        </td>
+                        <td class="col-sm-1 col-md-1" style="text-align: center">
+                          <input type="number" class="form-control" value="2">
+                        </td>
+                        <td class="col-sm-1 col-md-1">
+                          $64.99
+                        </td>
+                        <td class="col-sm-1 col-md-1">
+                          $129.98
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="table-responsive">...
+                </div>
+
+                <form class="m-1">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Promo Code">
+                    <div class="input-group-append">
+                      <button type="button" class="btn btn-secondary"> Redeem</button>
+                    </div>
+                  </div>
+                </form>
+                <a type="button" href="order.html" class="m-1 btn btn-success">
+                  Go to order page
+                </a>
+
+                <a type="button" href="" class="m-1 btn btn-danger" data-bs-toggle="modal"
+                data-bs-target="cancelModal">
+                  Clear your shopping cart
+                </a>
+              </div>
+          </div>
+
+          <div class="modal fade" id="cancelModal" tabindex="-1" aria-labelledby="cancelModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Clear Cart</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  Are you sure you want to clear your cart?
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                  <button type="button" class="btn btn-danger">Yes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+       </main>     
+
+       <script src="https://cdn.jsdelivr.net/npm/bootsrap@5.0.2/dist/js/bootsrap.bundle.min.js"
+       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+       crossorigin="anonymous"></script>
   </body>
 </html>
