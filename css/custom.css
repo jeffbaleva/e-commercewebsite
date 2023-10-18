@@ -4,3 +4,11 @@ body {
     background-color: #FFF275;
 
 }
+
+a.nav-link {
+    margin-right: 20px;
+}
+
+header {
+    margin-bottom:20px;
+}
